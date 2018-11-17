@@ -1,10 +1,10 @@
 package sample;
 
-public class Droideka {
+public class BXDroidCommando {
 
   double Health=1000;
-  double Armor=500;
-  double Shield=2000;
+  double Armor=1000;
+  double Shield=1000;
 
   static final double Dexterity =0.3;
   static final double AttackSpeed=1.2;
@@ -51,17 +51,17 @@ public class Droideka {
 
   /**ClassInfo*/
   public void PrintInfo(){
-    System.out.println("Droideka is heavy droid class with high attack power and high shields");
+    System.out.println("BXDroidCommando is reconnaissance class with attack speed and dexterity");
   }
 
   @Override
   public String toString()
   {
-    return String.format("Droideka Health is"+Health+"Droideka Armor is"+Armor+"Droideka Shield is"+Shield);
+    return String.format("BXDroidCommando Health is"+Health+"BXDroidCommando Armor is"+Armor+"BXDroidCommando Shield is"+Shield);
   }
 
    //**Constructor */
-   public  Droideka (double health,double armor, double shield)
+   public  BXDroidCommando (double health,double armor, double shield)
    {this.Health=health;
     this.Armor=armor;
     this.Shield=shield;
@@ -75,7 +75,7 @@ public class Droideka {
     setHealth(mod,Health);
     setArmor(mod,Armor);
     setShield(mod,Shield);
-    System.out.printf("Droideka Supper Atacked  for %f  Health Armor for %f Shield for %f \n",mod,mod,mod);
+    System.out.printf("BXDroidCommando Supper Atacked  for %f  Health Armor for %f Shield for %f \n",mod,mod,mod);
   }
 
   public void CustomAttack(double Health,double Armor,double Shield)
@@ -85,7 +85,7 @@ public class Droideka {
     setHealth(mod,Health);
     setArmor(mod,Armor);
     setShield(mod,Shield);
-    System.out.printf("Droideka Supper Atacked  for  %f Health for %f Armor  and for %f Shield  \n"mod,mod,mod);
+    System.out.printf("BXDroidCommando Supper Atacked  for  %f Health for %f Armor  and for %f Shield  \n"mod,mod,mod);
 
   }
 
@@ -93,7 +93,7 @@ public class Droideka {
   public double Defence()
   {
     double mod = (Math.random() * 30 + 10);
-    System.out.printf("Droideka Defence mitigated Damage for %f Health for %f Armor and for %f Shield \n",mod,mod,mod);
+    System.out.printf("BXDroidCommando Defence mitigated Damage for %f Health for %f Armor and for %f Shield \n",mod,mod,mod);
     return mod;
 
   }
@@ -101,7 +101,7 @@ public class Droideka {
   public double CustomDefence ( )
   {
     double mod = (Math.random() * 50 + 30);
-    System.out.printf("Droideka Defence mitigated Damage for %f Health for %f Armor and for %f Shield \n",mod,mod,mod);
+    System.out.printf("BXDroidCommando Defence mitigated Damage for %f Health for %f Armor and for %f Shield \n",mod,mod,mod);
     return mod;
 
   }
