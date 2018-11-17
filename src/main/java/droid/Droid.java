@@ -1,61 +1,52 @@
 package droid;
 
-public class Droid {
+public abstract class Droid {
     private int health;
-    private int armor;
-    private boolean shield;
-    private double luck;
-    private double attackSpeed;
+    private int attack;
+    private int armorValue;
+    private boolean alive;
+    private boolean armor;
 
-    public String getInformation() {
-        return information;
+    protected Droid(int health, int attack, int armorValue, boolean alive, boolean armor) {
+        this.health = health;
+        this.attack = attack;
+        this.armorValue = armorValue;
+        this.alive = alive;
+        this.armor = armor;
     }
 
-    public void setInformation(String information) {
-        this.information = information;
-    }
+    public abstract int superAttack(Droid droid);
+    public abstract int attack(Droid droid);
+    public abstract void defence(int damage);
 
-    private String information;
+    public abstract String printDroidInfo();
 
     public int getHealth() {
         return health;
     }
-
     public void setHealth(int health) {
         this.health = health;
     }
 
-    public int getArmor() {
-        return armor;
+    public int getArmorValue() {
+        return armorValue;
+    }
+    public void setArmorValue(int armorValue) { this.armorValue = armorValue; }
+
+    public int getAttack() { return attack; }
+    public void setAttack(int attack) { this.attack = attack; }
+
+    public boolean isArmor() {
+        if (armorValue <= 0) {
+            return false;
+        }
+        return true;
     }
 
-    public void setArmor(int armor) {
-        this.armor = armor;
+    public boolean isAlive() {
+        if (health <= 0) {
+            return false;
+        }
+        return true;
     }
-
-    public boolean isShield() {
-        return shield;
-    }
-
-    public void setShield(boolean shield) {
-        this.shield = shield;
-    }
-
-    public double getLuck() {
-        return luck;
-    }
-
-    public void setLuck(double luck) {
-        this.luck = luck;
-    }
-
-    public double getAttackSpeed() {
-        return attackSpeed;
-    }
-
-    public void setAttackSpeed(double attackSpeed) {
-        this.attackSpeed = attackSpeed;
-    }
-
-
 }
