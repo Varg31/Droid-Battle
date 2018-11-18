@@ -1,5 +1,6 @@
 package manager;
 
+import droid.BXDroidCommando;
 import droid.Droid;
 import droid.Droideka;
 import droid.IG100MagnaGuard;
@@ -17,6 +18,8 @@ public class DroidFactory {
             case 2:
                 return new Droideka(100, 30, 40, true, true);
             case 3:
+                return new BXDroidCommando(100, 30, 40, true, true);
+            case 4:
                 return new Droideka(100, 30, 40, true, true);
         }
         return null;
