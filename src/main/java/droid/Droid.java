@@ -19,7 +19,7 @@ public abstract class Droid {
     public abstract int attack(Droid droid);
     public abstract void defence(int damage);
 
-    public abstract String printDroidInfo();
+    //public abstract String printDroidInfo();
 
     public int getHealth() {
         if (health > 0) {

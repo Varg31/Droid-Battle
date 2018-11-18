@@ -38,6 +38,7 @@ public class Menu {
         System.out.println("Choose your droid:\n");
         System.out.println("\t1. IG100MagnaGuard");
         System.out.println("\t2. Droideka\n");
+        System.out.println("\t3. BXDroidCommando");
         System.out.print("Print your massage here: ");
 
         int result = Integer.parseInt(scanner.nextLine());
@@ -50,7 +51,8 @@ public class Menu {
         System.out.println("Choose your enemy:\n");
         System.out.println("\t1. IG100MagnaGuard");
         System.out.println("\t2. Droideka");
-        System.out.println("\t3. Random droid\n");
+        System.out.println("\t3. BXDroidCommando");
+        System.out.println("\t4. Random droid\n");
         System.out.print("Print your massage here: ");
 
         int result = Integer.parseInt(scanner.nextLine());
