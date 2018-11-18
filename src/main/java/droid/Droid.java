@@ -22,14 +22,18 @@ public abstract class Droid {
     public abstract String printDroidInfo();
 
     public int getHealth() {
-        return health;
+        if (health > 0) {
+            return health;
+        } else { return 0; }
     }
     public void setHealth(int health) {
         this.health = health;
     }
 
     public int getArmorValue() {
-        return armorValue;
+        if (armorValue > 0) {
+            return armorValue;
+        } else { return 0; }
     }
     public void setArmorValue(int armorValue) { this.armorValue = armorValue; }
 

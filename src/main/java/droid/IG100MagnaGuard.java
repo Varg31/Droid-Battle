@@ -1,7 +1,7 @@
 package droid;
 
 public class IG100MagnaGuard extends Droid implements BattleDroid{
-    private static final double ATTACK_SPEED = 4.0; // interval [0, 5]
+    private static final double ATTACK_SPEED = 2.5; // interval [0, 3]
     private static final double DARK_POWER = 3.0;  // special droid characteristic interval [0, 5]
     private static final int MINIMAL_DAMAGE = 10;
     private static final int MAXIMAL_DAMAGE = 15;

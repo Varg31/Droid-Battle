@@ -3,9 +3,9 @@ package engine;
 import droid.battle.Battle;
 import manager.DroidFactory;
 
-import java.util.Scanner;
-
 public class Engine implements Runnable {
+    public static final int WAIT_TIME = 4000;
+
     private Thread thread;
     private boolean running;
     private Battle battle;
@@ -53,10 +53,15 @@ public class Engine implements Runnable {
                 System.out.println("We working on this:)");
                 break;
             case 3:
-                thread.stop();
+                this.stop();
         }
 
         while (running) {
+            /*if (battle.enemyIsAlive() != true || battle.playerIsAlive() != true) {
+                System.out.println("Game over");
+                this.stop();
+            }*/
+
             int choseTurn = menu.startBattleMenu();
 
             switch (choseTurn) {
@@ -68,10 +73,15 @@ public class Engine implements Runnable {
                     break;
             }
 
+            if (battle.enemyIsAlive() != true) {
+                System.out.println("Game over");
+                this.stop();
+            }
+
             System.out.println("Now is enemy turn...");
 
             try {
-                Thread.sleep(5000);
+                Thread.sleep(WAIT_TIME);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -82,9 +92,9 @@ public class Engine implements Runnable {
                 battle.enemyAttack();
             }
 
-            if (battle.enemyIsAlive() != true || battle.playerIsAlive() != true) {
+            if (battle.playerIsAlive() != true) {
                 System.out.println("Game over");
-                thread.stop();
+                this.stop();
             }
         }
     }

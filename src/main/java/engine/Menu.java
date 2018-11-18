@@ -26,7 +26,6 @@ public class Menu {
 
     public int startBattleMenu() {
         System.out.println("Lets crash some engine!!!\n");
-        System.out.println("Now is your turn:");
         System.out.println("\t1. Simple attack");
         System.out.println("\t2. Super attack");
         System.out.print("Print your massage here: ");
