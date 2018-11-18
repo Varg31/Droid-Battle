@@ -1,8 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
+<<<<<<< HEAD
     <bytecodeTargetLevel>
       <module name="droid-battle" target="1.5" />
     </bytecodeTargetLevel>
+=======
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="droid-battle" />
+        <module name="droidbattle" />
+      </profile>
+    </annotationProcessing>
+>>>>>>> a2c9d4aac885af12477ce48723ef3eb935ae528d
   </component>
 </project>
