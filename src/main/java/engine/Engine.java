@@ -53,15 +53,10 @@ public class Engine implements Runnable {
                 System.out.println("We working on this:)");
                 break;
             case 3:
-                this.stop();
+                System.exit(0);
         }
 
         while (running) {
-            /*if (battle.enemyIsAlive() != true || battle.playerIsAlive() != true) {
-                System.out.println("Game over");
-                this.stop();
-            }*/
-
             int choseTurn = menu.startBattleMenu();
 
             switch (choseTurn) {
@@ -71,6 +66,11 @@ public class Engine implements Runnable {
                 case 2:
                     battle.playerSuperAttack();
                     break;
+                case 3:
+                    System.out.println("It`s must be shame for you!");
+                    System.out.println("True warrior is never surrender!");
+                    System.out.println("Game over!");
+                    this.stop();
             }
 
             if (battle.enemyIsAlive() != true) {

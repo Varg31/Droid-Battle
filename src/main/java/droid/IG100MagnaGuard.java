@@ -38,7 +38,7 @@ public class IG100MagnaGuard extends Droid implements BattleDroid{
     }
 
     public int superAttack(Droid droid) {
-        if (droid.isArmor()) {
+        if (droid.isArmor() == true) {
             if (attack >= droid.getArmorValue()) {
                 attackDefenceModifier = 1 + (attack - droid.getArmorValue()) * 0.05;
             } else {
@@ -56,7 +56,7 @@ public class IG100MagnaGuard extends Droid implements BattleDroid{
     }
 
     public int attack(Droid droid) {
-        if (droid.isArmor()) {
+        if (droid.isArmor() == true) {
             if (attack >= droid.getArmorValue()) {
                 attackDefenceModifier = 1 + (attack - droid.getArmorValue()) * 0.05;
             } else {
@@ -94,12 +94,12 @@ public class IG100MagnaGuard extends Droid implements BattleDroid{
     }
 
     public String printDroidInfo() {
-        String info = "\tType: IG100MagnaGuard\n" + "Model: IG-100 \n" +
+        String info = "\tType: IG100MagnaGuard\n" + "\tModel: IG-100 \n" +
                 "\tHealth: " + getHealth() + " HP" + "\n" +
                 "\tArmor: " + getArmorValue() + "\n" +
                 "\tAttack: " + getAttack() + "\n" +
-                "\tMiddle damage: [" + getBaseDamage() + "\n" +
-                "\tAttack speed: " + ATTACK_SPEED;
+                "\tMiddle damage: " + getBaseDamage() + "\n" +
+                "\tAttack speed: " + ATTACK_SPEED + "\n";
         return info;
     }
 

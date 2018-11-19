@@ -4,6 +4,8 @@ import droid.BattleDroid;
 import droid.Droid;
 
 public class Battle {
+    private static int superAttackCount;
+
     private Droid player;
     private Droid enemy;
 
@@ -18,7 +20,7 @@ public class Battle {
 
     public void playerAttack() {
         int hitPoints = player.attack(enemy);
-        System.out.println("Player set " + hitPoints + " of damage.\n");
+        System.out.println("Player set " + hitPoints + " of damage. (Simple attack)\n");
         System.out.println("Enemy characteristics after course:");
 
         enemy.defence(hitPoints);
@@ -28,19 +30,26 @@ public class Battle {
     }
 
     public void playerSuperAttack() {
-        int hitPoints = player.superAttack(enemy);
-        System.out.println("Player set " + hitPoints + " of damage.");
-        System.out.println("Enemy characteristics after course:");
+        if (superAttackCount >= 2) {
+            System.out.println("You can`t use super attack anymore.");
+            playerAttack();
+            return;
+        } else {
+            superAttackCount++;
+            int hitPoints = player.superAttack(enemy);
+            System.out.println("Player set " + hitPoints + " of damage. (Super attack)");
+            System.out.println("Enemy characteristics after course:");
 
-        enemy.defence(hitPoints);
-        if (enemy.isAlive() == false) {
-            System.out.println("My congratulation, you win!");
-        } else return;
+            enemy.defence(hitPoints);
+            if (enemy.isAlive() == false) {
+                System.out.println("My congratulation, you win!");
+            } else return;
+        }
     }
 
     public void enemyAttack() {
         int hitPoints = enemy.attack(player);
-        System.out.println("Enemy set " + hitPoints + " of damage.");
+        System.out.println("Enemy set " + hitPoints + " of damage. (Simple attack)");
         System.out.println("Player characteristics after course:");
         player.defence(hitPoints);
 
@@ -51,7 +60,7 @@ public class Battle {
 
     public void enemySuperAttack() {
         int hitPoints = enemy.superAttack(player);
-        System.out.println("Enemy set " + hitPoints + " of damage.");
+        System.out.println("Enemy set " + hitPoints + " of damage. (Super attack)");
         System.out.println("Player characteristics after course:");
 
         player.defence(hitPoints);
@@ -61,14 +70,14 @@ public class Battle {
     }
 
     public boolean enemyIsAlive() {
-        if (enemy.isAlive()) {
+        if (enemy.isAlive() == true) {
             return true;
         }
         return false;
     }
 
     public boolean playerIsAlive() {
-        if (player.isAlive()) {
+        if (player.isAlive() == true) {
             return true;
         }
         return false;

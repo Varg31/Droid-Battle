@@ -1,8 +1,8 @@
 package droid;
 
 public class Droideka extends Droid implements BattleDroid{
-    public static final double ATTACK_SPEED = 2.5;
-    public static final double DARK_POWER = 3;  // special droid characteristic interval [0, 5]
+    public static final double ATTACK_SPEED = 1.5;
+    public static final double DARK_POWER = 2;  // special droid characteristic interval [0, 5]
     private static final int MINIMAL_DAMAGE = 20;
     private static final int MAXIMAL_DAMAGE = 25;
 
@@ -45,7 +45,7 @@ public class Droideka extends Droid implements BattleDroid{
     }
 
     public int superAttack(Droid droid) {
-        if (isArmor()) {
+        if (droid.isArmor() == true) {
             if (attack >= droid.getArmorValue()) {
                 attackDefenceModifier = 1 + (attack - droid.getArmorValue()) * 0.05;
             } else {
@@ -63,7 +63,7 @@ public class Droideka extends Droid implements BattleDroid{
     }
 
     public int attack(Droid droid) {
-        if (droid.isArmor()) {
+        if (droid.isArmor() == true) {
             if (attack >= droid.getArmorValue()) {
                 attackDefenceModifier = 1 + (attack - droid.getArmorValue()) * 0.05;
             } else {
@@ -101,12 +101,12 @@ public class Droideka extends Droid implements BattleDroid{
     }
 
     public String printDroidInfo() {
-        String info = "Type: Droideka\n" + "Model: Lightweight Droid \n" +
-                "Health: " + getHealth() + " HP" + "\n" +
-                "Armor: " + getArmorValue() + "\n" +
-                "Attack: " + getAttack() + "\n" +
-                "Middle damage: [" + getDamage() + "\n" +
-                "Attack speed: " + ATTACK_SPEED;
+        String info = "\tType: Droideka\n" + "\tModel: Lightweight Droid \n" +
+                "\tHealth: " + getHealth() + " HP" + "\n" +
+                "\tArmor: " + getArmorValue() + "\n" +
+                "\tAttack: " + getAttack() + "\n" +
+                "\tMiddle damage: " + getDamage() + "\n" +
+                "\tAttack speed: " + ATTACK_SPEED + "\n";
         return info;
     }
 
