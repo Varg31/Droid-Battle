@@ -3,8 +3,8 @@ package droid;
 public class KSDroidSecurity extends Droid {
     private static final double ATTACK_SPEED = 2.5; // interval [0, 5]
     private static final double DARK_POWER = 2.0;  // special droid characteristic interval [0, 5]
-    private static final int MINIMAL_DAMAGE = 10;
-    private static final int MAXIMAL_DAMAGE = 15;
+    private static final int MINIMAL_DAMAGE = 15;
+    private static final int MAXIMAL_DAMAGE = 20;
 
     private static int attack;
 
@@ -38,7 +38,7 @@ public class KSDroidSecurity extends Droid {
     }
 
     public int superAttack(Droid droid) {
-        if (droid.isArmor()) {
+        if (droid.isArmor() == true) {
             if (attack >= droid.getArmorValue()) {
                 attackDefenceModifier = 1 + (attack - droid.getArmorValue()) * 0.05;
             } else {
@@ -56,7 +56,7 @@ public class KSDroidSecurity extends Droid {
     }
 
     public int attack(Droid droid) {
-        if (droid.isArmor()) {
+        if (droid.isArmor() == true) {
             if (attack >= droid.getArmorValue()) {
                 attackDefenceModifier = 1 + (attack - droid.getArmorValue()) * 0.05;
             } else {
@@ -98,8 +98,8 @@ public class KSDroidSecurity extends Droid {
                 "\tHealth: " + getHealth() + " HP" + "\n" +
                 "\tArmor: " + getArmorValue() + "\n" +
                 "\tAttack: " + getAttack() + "\n" +
-                "\tMiddle damage: [" + getBaseDamage() + "\n" +
-                "\tAttack speed: " + ATTACK_SPEED;
+                "\tMiddle damage: " + getBaseDamage() + "\n" +
+                "\tAttack speed: " + ATTACK_SPEED + "\n";
         return info;
     }
 

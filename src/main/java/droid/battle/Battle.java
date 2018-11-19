@@ -2,6 +2,7 @@ package droid.battle;
 
 import droid.BattleDroid;
 import droid.Droid;
+import engine.Menu;
 
 public class Battle {
     private static int superAttackCount;
@@ -20,52 +21,52 @@ public class Battle {
 
     public void playerAttack() {
         int hitPoints = player.attack(enemy);
-        System.out.println("Player set " + hitPoints + " of damage. (Simple attack)\n");
+        System.out.println(Menu.ANSI_RED + "Player set " + hitPoints + " of damage. (Simple attack)" + Menu.ANSI_RESET);
         System.out.println("Enemy characteristics after course:");
 
         enemy.defence(hitPoints);
         if (enemy.isAlive() == false) {
-            System.out.println("My congratulation, you win!");
+            System.out.println(Menu.ANSI_CYAN +"My congratulation, you win!" + Menu.ANSI_RESET);
         } else return;
     }
 
     public void playerSuperAttack() {
         if (superAttackCount >= 2) {
-            System.out.println("You can`t use super attack anymore.");
+            System.out.println(Menu.ANSI_RED + "You can`t use super attack anymore." + Menu.ANSI_RESET);
             playerAttack();
             return;
         } else {
             superAttackCount++;
             int hitPoints = player.superAttack(enemy);
-            System.out.println("Player set " + hitPoints + " of damage. (Super attack)");
+            System.out.println(Menu.ANSI_RED + "Player set " + hitPoints + " of damage. (Super attack)" + Menu.ANSI_RESET);
             System.out.println("Enemy characteristics after course:");
 
             enemy.defence(hitPoints);
             if (enemy.isAlive() == false) {
-                System.out.println("My congratulation, you win!");
+                System.out.println(Menu.ANSI_CYAN +"My congratulation, you win!" + Menu.ANSI_RESET);
             } else return;
         }
     }
 
     public void enemyAttack() {
         int hitPoints = enemy.attack(player);
-        System.out.println("Enemy set " + hitPoints + " of damage. (Simple attack)");
+        System.out.println(Menu.ANSI_RED + "Enemy set " + hitPoints + " of damage. (Simple attack)" + Menu.ANSI_RESET);
         System.out.println("Player characteristics after course:");
-        player.defence(hitPoints);
 
+        player.defence(hitPoints);
         if (player.isAlive() == false) {
-            System.out.println("You was defeated");
+            System.out.println(Menu.ANSI_CYAN + "You was defeated" + Menu.ANSI_RESET);
         } else return;
     }
 
     public void enemySuperAttack() {
         int hitPoints = enemy.superAttack(player);
-        System.out.println("Enemy set " + hitPoints + " of damage. (Super attack)");
+        System.out.println(Menu.ANSI_RED + "Enemy set " + hitPoints + " of damage. (Super attack)" + Menu.ANSI_RESET);
         System.out.println("Player characteristics after course:");
 
         player.defence(hitPoints);
         if (player.isAlive() == false) {
-            System.out.println("You was defeated");
+            System.out.println(Menu.ANSI_CYAN + "You was defeated" + Menu.ANSI_RESET);
         } else return;
     }
 

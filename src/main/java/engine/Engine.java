@@ -51,7 +51,6 @@ public class Engine implements Runnable {
                 break;
             case 2:
                 System.out.println("We working on this:)");
-                break;
             case 3:
                 System.exit(0);
         }
@@ -67,18 +66,19 @@ public class Engine implements Runnable {
                     battle.playerSuperAttack();
                     break;
                 case 3:
-                    System.out.println("It`s must be shame for you!");
-                    System.out.println("True warrior is never surrender!");
-                    System.out.println("Game over!");
+                    System.out.println(Menu.ANSI_CYAN + "It`s must be shame for you!");
+                    System.out.println("True warrior is never surrender!" + Menu.ANSI_RESET);
+                    System.err.println("Game over!");
                     this.stop();
             }
 
             if (battle.enemyIsAlive() != true) {
                 System.out.println("Game over");
                 this.stop();
+                System.exit(0);
             }
 
-            System.out.println("Now is enemy turn...");
+            System.out.println(Menu.ANSI_BLUE + "Now is enemy turn..." + Menu.ANSI_RESET);
 
             try {
                 Thread.sleep(WAIT_TIME);
@@ -95,6 +95,7 @@ public class Engine implements Runnable {
             if (battle.playerIsAlive() != true) {
                 System.out.println("Game over");
                 this.stop();
+                System.exit(0);
             }
         }
     }

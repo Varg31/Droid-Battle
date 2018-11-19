@@ -1,9 +1,6 @@
 package manager;
 
-import droid.BXDroidCommando;
-import droid.Droid;
-import droid.Droideka;
-import droid.IG100MagnaGuard;
+import droid.*;
 
 public class DroidFactory {
 
@@ -29,9 +26,13 @@ public class DroidFactory {
                 System.out.println(((BXDroidCommando) droid).printDroidInfo());
                 return droid;
             case 4:
+                droid = new KSDroidSecurity(100, 20, 50, true, true);
+                System.out.println(((KSDroidSecurity) droid).printDroidInfo());
+                return droid;
+            case 5:
                 int random = 1 + (int)(Math.random() * 5);
                 createDroid(random);
         }
-        return null;
+        return new IG100MagnaGuard(100, 40, 50, true, true);
     }
 }
