@@ -4,7 +4,7 @@ import droid.battle.Battle;
 import manager.DroidFactory;
 
 public class Engine implements Runnable {
-    public static final int WAIT_TIME = 4000;
+    public static final int WAIT_TIME = 3000;
 
     private Thread thread;
     private boolean running;

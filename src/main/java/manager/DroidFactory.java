@@ -32,7 +32,8 @@ public class DroidFactory {
             case 5:
                 int random = 1 + (int)(Math.random() * 5);
                 createDroid(random);
+            default:
+                return new IG100MagnaGuard(100, 40, 50, true, true);
         }
-        return new IG100MagnaGuard(100, 40, 50, true, true);
     }
 }

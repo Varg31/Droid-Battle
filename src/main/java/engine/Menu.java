@@ -27,7 +27,7 @@ public class Menu {
         System.out.println(ANSI_PURPLE + "\t1. Start Battle");
         System.out.println("\t2. About developers");
         System.out.println("\t3. Quit\n" + ANSI_RESET);
-        System.out.print(ANSI_GREEN + "Print your massage here: " + ANSI_RESET);
+        System.out.print(ANSI_GREEN + "Print your message here: " + ANSI_RESET);
         int result = Integer.parseInt(scanner.nextLine());
         System.out.println();
         return result;
@@ -38,7 +38,7 @@ public class Menu {
         System.out.println(ANSI_PURPLE + "\t1. Simple attack");
         System.out.println("\t2. Super attack");
         System.out.println("\t3. Surrender" + ANSI_RESET);
-        System.out.print(ANSI_GREEN + "Print your massage here: " + ANSI_RESET);
+        System.out.print(ANSI_GREEN + "Print your message here: " + ANSI_RESET);
         int result = Integer.parseInt(scanner.nextLine());
         System.out.println();
         return result;
@@ -51,7 +51,7 @@ public class Menu {
         System.out.println("\t3. BXDroidCommando");
         System.out.println("\t4. KSDroidSecurity");
         System.out.println("\t5. Random Droid\n" + ANSI_RESET);
-        System.out.print(ANSI_GREEN + "Print your massage here: " + ANSI_RESET);
+        System.out.print(ANSI_GREEN + "Print your message here: " + ANSI_RESET);
 
         int result = Integer.parseInt(scanner.nextLine());
         System.out.println();
@@ -66,7 +66,7 @@ public class Menu {
         System.out.println("\t3. BXDroidCommando");
         System.out.println("\t4. KSDroidSecurity");
         System.out.println("\t5. Random Droid\n" + ANSI_RESET);
-        System.out.print(ANSI_GREEN + "Print your massage here: " + ANSI_RESET);
+        System.out.print(ANSI_GREEN + "Print your message here: " + ANSI_RESET);
 
         int result = Integer.parseInt(scanner.nextLine());
         System.out.println();

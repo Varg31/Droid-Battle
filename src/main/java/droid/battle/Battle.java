@@ -1,6 +1,5 @@
 package droid.battle;
 
-import droid.BattleDroid;
 import droid.Droid;
 import engine.Menu;
 
